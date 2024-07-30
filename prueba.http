@@ -1,0 +1,6 @@
+POST http://localhost:3000/completions
+Content-Type: application/json
+
+{
+    "prompt": "Quien es el presidente de Estados Unidos en este momento?"
+}
