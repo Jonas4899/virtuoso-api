@@ -11,8 +11,7 @@ const API_KEY = 'sk-proj-ETKMRrPYAceMJIA28tbkT3BlbkFJszYSf6Ma6iCZ39LYMHWo'
 const endpoint = 'https://api.openai.com/v1/chat/completions'
 
 app.post('/completions', async (req, res) => {
-  const { prompt } = req.body
-  console.log('prompt', prompt)
+  const { messages } = req.body
 
   const options = {
     method: 'POST',
@@ -22,8 +21,8 @@ app.post('/completions', async (req, res) => {
     },
     body: JSON.stringify({
       model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: prompt }],
-      max_tokens: 100
+      messages: messages,
+      max_tokens: 1000
     })
   }
 
