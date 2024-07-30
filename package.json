@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "node --watch ./app.js"
+    "dev": "node --watch ./app.mjs"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "node-fetch": "^3.3.2",
     "openai": "^4.53.2"
   }
 }
