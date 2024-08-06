@@ -13,7 +13,7 @@ app.use(
 app.use(express.json())
 
 const PORT = 3000
-const API_KEY = 'sk-proj-ETKMRrPYAceMJIA28tbkT3BlbkFJszYSf6Ma6iCZ39LYMHWo'
+const API_KEY = 'xxx-xxx-xxx-xxx-xxx'
 const endpoint = 'https://api.openai.com/v1/chat/completions'
 
 app.get('/completions', async (req, res) => {
