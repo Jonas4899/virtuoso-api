@@ -50,10 +50,22 @@ app.get('/completions', async (req, res) => {
     res.setHeader('Cache-Control', 'no-cache')
     res.setHeader('Connection', 'keep-alive')
 
+    let buffer = ''
+
     response.body.on('data', (chunk) => {
       const message = chunk.toString()
       if (message.trim() !== '') {
-        res.write(`data: ${message}\n\n`)
+        try {
+          JSON.parse(message)
+          res.write(`data: ${message}\n\n`)
+          buffer = ''
+        } catch (error) {
+          buffer += message
+          if (buffer.endsWith('\n\n')) {
+            res.write(`data: ${buffer}\n\n`)
+            buffer = ''
+          }
+        }
       }
     })
 
