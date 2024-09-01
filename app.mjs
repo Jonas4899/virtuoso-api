@@ -1,8 +1,11 @@
 import express from 'express'
 import cors from 'cors'
 import fetch from 'node-fetch'
+import dotenv from 'dotenv'
 
 const app = express()
+dotenv.config()
+
 app.use(
   cors({
     origin: 'http://localhost:5173',
@@ -13,13 +16,14 @@ app.use(
 app.use(express.json())
 
 const PORT = 3000
-const API_KEY = 'xxx-xxx-xxx-xxx-xxx'
+const API_KEY = process.env.OPENAI_KEY
 const endpoint = 'https://api.openai.com/v1/chat/completions'
 
 app.get('/completions', async (req, res) => {
   let messages
   try {
     messages = JSON.parse(req.query.messages)
+    console.log(`Estos son los mensajes actuales: ${messages}`)
   } catch (error) {
     return res.status(400).json({ error: 'Invalid messages format' })
   }
