@@ -1,5 +1,5 @@
 import express from 'express'
-import { getData } from './controller/conversation.mjs'
+import { getData, updateMessages } from './controller/conversation.mjs'
 import Chat from './models/conversation.mjs'
 
 export const router = express.Router()
@@ -17,3 +17,5 @@ router.post('/chat', async (req, res) => {
 })
 
 router.get('/chat/:chatId', getData)
+
+router.put('/chat/:chatId/messages', updateMessages)

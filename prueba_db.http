@@ -18,3 +18,20 @@ Content-Type: application/json
 ### Traer un objeto de la base de datos
 GET http://localhost:3000/chat/66e133eb25f4f4134e64ef86
 Content-Type: application/json
+
+### Actualizar un chat
+PUT http://localhost:3000/chat/66e133eb25f4f4134e64ef86/messages
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Here is a new message suggestion for your outfit."
+    },
+    {
+      "role": "user",
+      "content": "Thanks! I love it!"
+    }
+  ]
+}
