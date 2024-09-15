@@ -2,14 +2,18 @@ import express from 'express'
 import cors from 'cors'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
+import connectDB from './config/db.mjs'
+import bodyParser from 'body-parser'
+import { router } from './routes.mjs'
 
 const app = express()
 dotenv.config()
 
+app.use(bodyParser.json())
 app.use(
   cors({
     origin: 'http://localhost:5173',
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials: true
   })
 )
@@ -19,11 +23,11 @@ const PORT = 3000
 const API_KEY = process.env.OPENAI_KEY
 const endpoint = 'https://api.openai.com/v1/chat/completions'
 
+app.use('/', router)
 app.get('/completions', async (req, res) => {
   let messages
   try {
     messages = JSON.parse(req.query.messages)
-    console.log(`Estos son los mensajes actuales: ${messages}`)
   } catch (error) {
     return res.status(400).json({ error: 'Invalid messages format' })
   }
@@ -93,3 +97,5 @@ app.get('/completions', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
 })
+
+connectDB()
