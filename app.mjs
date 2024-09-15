@@ -19,7 +19,7 @@ app.use(
 )
 app.use(express.json())
 
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 const API_KEY = process.env.OPENAI_KEY
 const endpoint = 'https://api.openai.com/v1/chat/completions'
 
