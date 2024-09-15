@@ -48,3 +48,17 @@ export const updateMessages = async (req, res) => {
       })
   }
 }
+
+export const deleteChat = async (req, res) => {
+  const { chatId } = req.params;
+
+  try {
+    const deletedChat = await Chat.findByIdAndDelete(chatId);
+    if (!deletedChat) {
+      return res.status(404).json({ mensaje: 'Chat no encontrado' });
+    }
+    return res.status(200).json({ mensaje: 'Chat eliminado con éxito', chat: deletedChat });
+  } catch (error) {
+    return res.status(500).json({ mensaje: 'Error al eliminar el chat', error: error.message });
+  }
+};

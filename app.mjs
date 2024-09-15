@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 app.use(
   cors({
     origin: 'http://localhost:5173',
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials: true
   })
 )
@@ -28,7 +28,6 @@ app.get('/completions', async (req, res) => {
   let messages
   try {
     messages = JSON.parse(req.query.messages)
-    console.log(`Estos son los mensajes actuales: ${messages}`)
   } catch (error) {
     return res.status(400).json({ error: 'Invalid messages format' })
   }
