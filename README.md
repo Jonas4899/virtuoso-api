@@ -4,9 +4,6 @@
 
 
 
-
-
-
 <p>
 Es una aplicación web de aprendizaje de idiomas potenciada por inteligencia artificial, que permita a los estudiantes practicar conversación en contextos específicos y generar pruebas de gramática con feedback inmediato, para mejorar la experiencia de aprendizaje y efectividad en el dominio de un idioma.
 </p>
@@ -48,7 +45,8 @@ Enlace a ***[Virtuoso.Ai](https://virtuoso-ai.vercel.app/)***.
 
 ### Features
 ----
-
+<p>La función principal del backend es establecer la conexión entre la página y la API, facilitando la comunicación con ChatGPT. Este proceso permite obtener información desde la API y mostrarla en la página de manera eficiente.
+</p>
 
 ### Dependencias
 ------
@@ -67,7 +65,8 @@ Enlace a ***[Virtuoso.Ai](https://virtuoso-ai.vercel.app/)***.
 `$ git clone https://github.com/Jonas4899/virtuoso-ai.git`
 ###### Clona otro repositorio:
 
-<p>Es fundamental clonar el repositorio, ya que contiene la API de la aplicación y garantiza su funcionamiento adecuado. Por motivos de seguridad, la API está alojada en un repositorio separado.
+<p>Es fundamental clonar el repositorio, ya que contiene el backend de la aplicación y garantiza su funcionamiento adecuado. Por motivos de seguridad, el backend está alojada en un repositorio separado.
+
 
 </p>
 
@@ -98,65 +97,3 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Dependencias
-------
-  - @radix-ui/react-alert-dialog: 1.1.1
-  - @radix-ui/react-avatar: 1.1.0
-  -  @radix-ui/react-icons: 1.3.0
-  -  @radix-ui/react-navigation-menu: 1.2.0
-  -  @radix-ui/react-popover: 1.1.1
-  -  @radix-ui/react-scroll-area: 1.1.0
-  -  @radix-ui/react-slot: 1.1.0
-  -  @radix-ui/react-switch:1 .1.0
-  -  class-variance-authority: 0.7.0
-  -  clsx: 2.1.1
-  -  github-markdown-css: 5.6.1
-  -  prismjs: 1.29.0
-  -  react: 18.3.1
-  -  react-dom: 18.3.1
-  -  react-markdown: 9.0.1
-  -  react-router-dom: 6.25.1
-  -  react-syntax-highlighter: 15.5.0
-  -  tailwind-merge: 2.4.0
-  -  tailwindcss-animate: 1.0.7
-  -  zustand: 4.5.4
-
-<br>
-
-### Instalación
--------
-###### Clona este repositorio:
-
-`$ git clone https://github.com/Jonas4899/virtuoso-ai.git`
-###### Clona otro repositorio:
-
-<p>Es fundamental clonar el repositorio, ya que contiene la API de la aplicación y garantiza su funcionamiento adecuado. Por motivos de seguridad, la API está alojada en un repositorio separado.
-
-</p>
-
-###### Instala las dependencias:
-
-`$npm install`
-
-###### iniciar la pagina enel terminal
-`$npm run dev`
-
-### Autores
------
-
-<p>Jonathan Salcedo :kissing_heart:</p>
-<p>Silvana Gonzales :sunglasses:</p>
-<p>Kevin David Rueda :alien:</p>
-<br>
-
-
-
-### React + Vite
------
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh**
